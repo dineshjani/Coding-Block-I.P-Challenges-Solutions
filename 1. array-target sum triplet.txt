@@ -1,0 +1,36 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+int sum;
+cin>>sum;
+sort(a,a + n);
+for(int i=0;i<n-1;i++){
+    int x=a[i];
+    int l=i+1;
+   int  r=n-1;
+    while(l<r){
+        if(x+a[l]+a[r]==sum){
+            cout<<x<<", "<<a[l]<<" and "<<a[r]<<"\n";
+            l++;
+            r--;
+        }
+        else if(x+a[l]+a[r]<sum){
+            l=l+1;
+        }
+        else{
+            r=r-1;
+        }
+
+    }
+}
+
+
+	return 0;
+}

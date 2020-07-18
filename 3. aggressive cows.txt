@@ -1,0 +1,66 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main() {
+
+
+    int p;
+    cin>>p;
+    int a[p];
+    int c;
+    cin>>c;
+   int min=0;
+   int minl=1000;
+   int sum=0;
+    for(int j=0;j<p;j++){
+        cin>>a[j];
+        if(min<a[j]){
+            min=a[j];
+        }
+        if(minl>a[j]){
+            minl=a[j];
+        }
+        
+    }
+    sort(a,a+p);
+    int y=1000;
+    for(int i=1;i<p;i++){
+        if(y>(a[i]-a[i-1])){
+            y=a[i]-a[i-1];
+        }
+    }
+    
+int l=y;
+int r=min-minl;
+int large=y;
+int mid;
+
+while(l<=r){
+ mid=(l+r)/2;
+
+int d=1;
+for(int i=0;i<p;i++){
+    for(int j=i+1;j<p;j++){
+
+if(a[j]-a[i]>=mid){
+    
+    i=j;
+    d=d+1;
+}}}
+
+if(d>=c){
+    l=mid+1;
+large=mid;
+}
+else{
+    
+    r=mid-1;
+   
+}}
+
+
+
+cout<<large;
+
+	return 0;
+}

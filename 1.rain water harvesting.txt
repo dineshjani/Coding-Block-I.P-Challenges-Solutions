@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+int l[n];
+int r[n];
+	int maxl=a[0];
+	l[0]=a[0];
+	for(int i=0;i<n;i++){
+		if(a[i]>maxl){
+			maxl=a[i];}
+l[i]=maxl;
+	}
+	r[n-1]=a[n-1];
+	int maxr=a[n-1];
+	for(int i=n-2;i>=0;i--){
+		if(a[i]>maxr){
+			maxr=a[i];}
+r[i]=maxr;
+	}
+	int sum=0;
+	for(int i=0;i<n;i++){
+sum=sum+min(l[i],r[i])-a[i];
+	}
+	cout<<sum<<"\n";
+	return 0;
+}

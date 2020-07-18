@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std ;
+
+int  max_index(int arr[], int n){
+	int max = 0 ;
+	int max_index = 0 ;
+	for(int i=0; i<n; i++){
+		if(arr[i] > max){
+			max = arr[i] ;
+			max_index = i ;
+		}
+	}
+	return max_index ;
+}
+
+int main(){
+	string a ;
+	cin >> a ;
+	int arr[26] = {0} ;
+	for(int i=0; i<a.length(); i++){
+		arr[a[i]-'a'] += 1 ;
+	}
+	char result = 'a' ;
+	int max = max_index(arr, 26) ;
+	result = result + max ;
+	cout << result ;
+	return 0 ;
+}

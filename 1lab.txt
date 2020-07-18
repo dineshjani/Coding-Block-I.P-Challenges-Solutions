@@ -1,0 +1,24 @@
+set uid-some specific previledge
+root previledge 
+root group user 
+ownership 
+every file in linux will have ownership.
+ type of permission file/darectory
+rwx(read write execute)
+setid uid steciky bit
+setuid -normal user can be used
+password file shadow file
+password group information
+group assword stored in encryption form in shadow fie
+rwxr----r---1 root
+read=1'
+write=2
+exec=4
+owner group random
+sudo adduser username
+sudo groupadd groupname
+sudo deluser username
+sudo vim /etc/group
+ls -l/usr/bin/passwd
+chmod u+s /user/bin/passwd
+su test

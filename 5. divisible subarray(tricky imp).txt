@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+ int n;
+cin>>n;
+
+for(int i=0;i<n;i++){
+    long int p;
+    cin>>p;
+    long long int a[p];
+   
+    long int mod[p]={0};
+   
+  long long  int cum=0;
+    for(  long int j=0;j<p;j++){
+        cin>>a[j];
+        cum=cum+a[j];
+        
+        
+        mod[((cum % p) + p) % p]++; 
+        
+    }
+   
+   long long  int ans=0;
+    
+    for( long int j=0;j<p;j++){
+        
+        if(mod[j]>=2){
+            long long int m=mod[j];
+            ans=ans+(m*(m-1))/2;
+        }
+    }
+ans += mod[0]; 
+    cout<<ans<<"\n";
+}
+	return 0;
+}

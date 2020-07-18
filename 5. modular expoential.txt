@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main() {
+    
+      long long int s;
+        cin>>s;
+      long long int q;
+        cin>>q;
+      long long int t;
+        cin>>t;
+       long long int count=0;
+       long long int ans=1;
+       long  long int p=s;
+        while(q!=0){
+    
+        if((q&1)==1){
+            ans=ans*p;
+            ans=ans%t;
+            
+        }
+  p=p*p;
+  p=p%t;
+    q=q>>1;
+}
+cout<<ans%t;
+    
+	return 0;
+}

@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main() {
+    
+        int s;
+        cin>>s;
+        int q;
+        cin>>q;
+        int count=0;
+        int ans=1;
+        int p=s;
+        while(q!=0){
+    
+        if((q&1)==1){
+            ans=ans*p;
+        }
+  p=p*p;
+    q=q>>1;
+}
+cout<<ans;
+    
+	return 0;
+}

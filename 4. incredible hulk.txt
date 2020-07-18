@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main() {
+
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++){
+		int n;
+		cin>>n;
+		int setbits =0;
+		while(n!=0){
+			if(n&1 ==1){
+				setbits++;
+			}
+			n = n>>1;
+		}
+		cout<<setbits<<endl;
+	}
+	return 0;
+}

@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+int main () {
+     int m, n, mx=-100000;
+    cin >> m >> n;
+    for(int i=m; i<=n; ++i) {
+        for(int j=m+1; j<=n; ++j) {
+            if(mx < (i^j)) mx=i^j;
+        }
+    }
+    cout<<mx;
+	return 0;
+}

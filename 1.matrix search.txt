@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int n,m;
+    cin>>m>>n;
+    int a[m][n];
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            cin>>a[i][j];
+        }
+    }
+    int flag=1;
+    int p;
+    cin>>p;
+    int mid;
+    for(int i=0;i<m;i++){
+        if(a[i][0]<=p&&p<=a[i][n-1]){
+            int l=0;
+            int r=n-1;
+            while(l<=r){
+            mid=(l+r)/2;
+                if(a[i][mid]==p){
+                    flag=0;
+                    cout<<1;
+                    break;
+                }else if(a[i][mid]>p){
+                   
+                    r=mid-1;
+                }
+                else{
+                    l=mid+1;
+
+                }
+                
+            }
+        }
+    }
+    if(flag==1){
+        cout<<0;
+    }
+	return 0;
+}

@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main() {
+    char t;
+    cin>>t;
+    if(t>='a'&&t<='z'){
+        cout<<"L";
+    }
+    else if(t>='A'&&t<='Z'){
+        cout<<"U";
+    }
+    else{
+        cout<<"I";
+    }
+	return 0;
+}
