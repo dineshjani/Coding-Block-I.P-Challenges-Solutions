@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int count=0;
+void recur(int j,int n,string ai,string str){
+     if(j==n){
+        cout<<ai<<" ";
+
+        count++;
+       return;
+    }else{
+        recur(j+1,n,ai,str);
+    recur(j+1,n,ai+str[j],str);
+   }
+  
+    
+}
+int main()
+{
+    string str;
+    cin>>str;
+    int n=str.length();
+    int i=n-1;
+    string ai =" ";
+    recur(0,n,ai,str);
+    cout<<"\n"<<count;
+    return 0;
+}

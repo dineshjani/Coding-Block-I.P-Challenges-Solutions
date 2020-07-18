@@ -1,0 +1,29 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int count=0;
+void rec(string str,string in,int i,int n){
+    if(i==n){
+        for(int k=0;k<count;k++){
+            in=in+'x';
+        }
+        cout<<in;
+        return;
+    }
+    if(str[i]=='x'){
+        count++;
+        rec(str,in,i+1,n);
+    }
+    if(str[i]!='x'){
+    
+        rec(str,in+str[i],i+1,n);
+    }
+}
+int main() {
+    string str;
+    cin>>str;
+    int n=str.length();
+    string in;
+    rec(str,in,0,n);
+	return 0;
+}

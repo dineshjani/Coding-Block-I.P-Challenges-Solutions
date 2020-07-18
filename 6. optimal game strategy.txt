@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int n;
+   cin>>n;
+   int a[n];
+   for(int i=0;i<n;i++){
+       cin>>a[i];
+   }
+    int p[n][n];
+    int q[n][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            p[i][j]=0;
+            q[i][j]=0;
+        }
+    }
+    for(int g=0;g<n;g++){
+        for(int i = 0, j = g; j < n; ++i, ++j){
+        
+            if(j>i){
+            p[i][j]=max(q[i][j-1]+a[j],q[i+1][j]+a[i]);
+            q[i][j]=min(p[i][j-1],p[i+1][j]);
+        }
+            else{
+                p[i][j]=a[i];
+                q[i][j]=0;
+            }
+        }
+    }
+    cout<<p[0][n-1];
+}

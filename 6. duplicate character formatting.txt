@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+void recursive(int i,string str,int n){
+	if(i==n){
+		return;
+	}
+	cout<<str[i];
+    if((i!=n-1)&&(str[i]==str[i+1])){
+cout<<"*";
+    }
+	recursive(i+1,str,n);
+}
+int main() {
+	string str;
+	cin>>str;
+	int n=str.size();
+	recursive(0,str,n);
+	return 0;
+}

@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+void recursion(int a[],int i,int key,int n){
+	if(i==n){
+		return ;
+	}
+	if(a[i]==key){
+	    cout<<i<<" ";
+	}
+	recursion(a,i+1,key,n);
+}
+int main() {
+int n;
+cin>>n;
+int a[n];
+
+for(int i=0;i<n;i++){
+	cin>>a[i];
+}
+int key;
+cin>>key;
+recursion(a,0,key,n);
+    return 0;
+}

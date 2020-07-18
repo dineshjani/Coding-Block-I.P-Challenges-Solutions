@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+void rec(string str,string in,int i,int n){
+    if(i==n){
+        cout<<in<<"\n";
+        return;
+    }
+    int a=str[i]-'0';
+    int d;
+    if(i<=n-2){
+         d=a*10+(str[i+1]-'0');
+    }
+    if(i>n-2){
+        d=0;
+    }
+    rec(str,in+char(a+64),i+1,n);
+    if(d>9&&d<=26){
+        rec(str,in+char(d+64),i+2,n);
+    }
+    
+}
+int main() {
+    string str;
+    cin>>str;
+    int n=str.length();
+    string in;
+    rec(str,in,0,n);
+	return 0;
+}
